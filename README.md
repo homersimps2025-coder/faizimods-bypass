@@ -1,26 +1,17 @@
 # faizimods-bypass
 
-Auto-bypass pour **Faizimods Tool** — intercepte la vérification de licence via GitHub et injecte la clé HWID générée automatiquement.
+Bypass compile pour Faizimods Tool — binaire Cython ARM64.
 
-## Installation rapide
+## Installation
 
 ```bash
 git clone https://github.com/homersimps2025-coder/faizimods-bypass
 cd ~/fb-cloning
-cp ~/faizimods-bypass/sitecustomize.py /data/data/com.termux/files/usr/lib/python3.14/site-packages/
-python3 ~/faizimods-bypass/bypass.py
+python3 -c "import sys; sys.path.insert(0, '../faizimods-bypass'); import bypass; bypass.main()"
 ```
 
-## Compiler la version Cython (optionnel)
-```bash
-pip install cython setuptools
-python3 setup_bypass.py build_ext --inplace
-python3 -c "import bypass; bypass.main()"
-```
-
-## Fonctionnement
-1. Detecte automatiquement la cle HWID generee par le binaire
-2. Installe lintercepteur dans site-packages Python
-3. Intercepte le fetch GitHub de keys.txt
-4. Injecte la cle dans la reponse → ACCESS GRANTED ✅
+## Requirements
+- Termux (Android ARM64)
+- Python 3.14
+- faizimods dans ~/fb-cloning
 
